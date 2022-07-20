@@ -14,25 +14,32 @@
             <div class="card-body text-center">
                 <h1>Badly explained movies</h1>
 
-                <div>
-                    <p style="margin: 25px;"><span id="display_text"></span></p>
-                </div>
+                <hr style="padding: 25px;">
+
+                <div id="display_text" class="mt-4"></div>
+
+                <hr>
+
+                <form action="form">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="guess_input" placeholder="Enter guess here">
+                    </div>
+    
+                    <div class="d-grid gap-2 mt-4">
+                        <button id="submit_button" type="submit" class="btn btn-primary">Submit</button>
+    
+                    </div>
+    
+                    <!-- <div class="d-grid gap-2 mt-4">
+    
+                        <button id="hint_button" type="submit" class="btn btn-secondary">Show Hint</button>
+    
+                    </div> -->
+
+                </form>
         
 
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="guess_input" placeholder="Enter guess here">
-                </div>
-
-                <div class="d-grid gap-2 mt-4">
-                    <button id="submit_button" type="button" class="btn btn-primary" onclick="return getName()">Submit</button>
-
-                </div>
-
-                <div class="d-grid gap-2 mt-4">
-
-                    <button id="hint_button" type="button" class="btn btn-secondary" onclick="return getHint()">Show Hint</button>
-
-                </div>
+              
 
                 
                 

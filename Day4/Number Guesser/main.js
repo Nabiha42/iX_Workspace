@@ -1,27 +1,23 @@
-const guessInput = document.getElementById('guess');
-const buttonSubmit = document.getElementById('submit');
+const guessInput = document.getElementById('guess_input');
+const form = document.getElementById('form');
+const result = document.getElementById('result');
 
 
-buttonSubmit.addEventListener('click', (event) => {
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
     const check = guessInput.value;
-    let random = Math.floor(Math.random() * (10 - 1)) + 1;
-    if (check === random) {
-        console.log("You guesed right!");
-        return;
+    const random = Math.floor(Math.random() * (10 - 1)) + 1;
+    result.classList.add('alert');
+    if (check == random) {
+        result.innerHTML = "You guesed right!";
+        result.classList.remove('alert-danger');
+        result.classList.add('alert-success');
     }
     else {
-        console.log("try again");
+        result.innerHTML = "try again";
+        result.classList.remove('alert-success');
+        result.classList.add('alert-danger');
     }
-    console.log(check);
-    console.log(random);
-
-//   const resultDiv = document.createElement('div');
-//   resultDiv.innerHTML = '$' + total.toFixed(2);
-
-//   resultDiv.classList.add('alert');
-//   resultDiv.classList.add('alert-primary');
-//   resultDiv.classList.add('mt-4');
-
-//   cardBody.append(resultDiv);
+    
 })

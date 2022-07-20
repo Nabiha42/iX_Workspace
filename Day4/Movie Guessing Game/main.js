@@ -17,40 +17,29 @@ const movies = [
 const guessInput = document.getElementById('guess_input');
 const buttonSubmit = document.getElementById('submit_button');
 const buttonHint = document.getElementById('hint_button');
+const text = document.getElementById('display_text');
+const form = document.getElementById('form');
 
-buttonSubmit.addEventListener('click', (event) => {
-    getName();
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (guessInput == "you") {
+        text.innerHTML = "yes!";
+    }
+
 })
 
-buttonHint.addEventListener('click', (event) => {
-    hintText.classList.toggle('movie_hint');
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     if (guessInput.value) {
+//         text.innerHTML = "you have a guess";
+//     }
+//     else {
+//         text.innerHTML = "you want a hint";
+//     }
+// })
 
-})
+// buttonHint.addEventListener('click', (event) => {
+//     hintText.classList.toggle('movie_hint');
 
-// function guessMovie() {
-//     var exp = [Math.floor(Math.random() * movies.explanation.length)];
-//     document.getElementById("display_text").innerHTML = exp;
-//     return exp;
+// })
 
-//     // if (movieInput == movie) {
-//     //     console.log("You guessed right!")
-//     // }
-// }
-
-// guessMovie();
-
-
-// // function getHint(movie)   {
-// //     if (guessInput==None) {
-// //         var resul
-// //         result = 
-// //     }
-// //     document.getElementById("hintText").style.visibility="visible";
-// //     return false;
-// // }
-function getName(guessInput) {
-    var guess = document.getElementById("display_text", guessInput);
-    return guess;
-
-}
-getName();

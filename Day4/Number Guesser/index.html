@@ -14,12 +14,19 @@
 
             <h1 style="margin-top:25px; border:25px;">Number Guesser</h1>
             <p>This is a small number guessing game, it will teach you about the DOM</p>
+            <hr>
             <p>Guess a number between 0 and 10</p>
 
-            <div class="input-group mb-3">
-                <input type="number" class="form-control" placeholder="Enter guess here" aria-label="guess" aria-describedby="button">
-                <button class="btn btn-outline-secondary" type="button" id="submit">Submit</button>
-            </div>
+            <form id="form">
+                <div class="input-group mb-3">
+                    <input id="guess_input" type="text" class="form-control" placeholder="Enter guess here" >
+                    <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                </div>
+            </form>
+
+            <div id="result" class="mt-4"></div>
+
+            
 
             
         
