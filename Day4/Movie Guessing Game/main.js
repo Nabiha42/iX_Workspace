@@ -20,26 +20,53 @@ const buttonHint = document.getElementById('hint_button');
 const text = document.getElementById('display_text');
 const form = document.getElementById('form');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (guessInput == "you") {
-        text.innerHTML = "yes!";
-    }
-
+buttonSubmit.addEventListener('click', (event)=> {
+    event.preventDefault;
+    checkGuess();
 })
 
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     if (guessInput.value) {
-//         text.innerHTML = "you have a guess";
-//     }
-//     else {
-//         text.innerHTML = "you want a hint";
-//     }
-// })
+buttonHint.addEventListener('click', (event)=> {
+    event.preventDefault;
+    giveHint();
+})
 
-// buttonHint.addEventListener('click', (event) => {
-//     hintText.classList.toggle('movie_hint');
+let gen_exp;
+function generateExplanation() {
+    var rand_exp = movies.explanation[Math.floor(Math.random() * movies.explanation.length)];
+    text.innerHTML = rand_exp;
+    gen_exp = rand_exp;
+}
 
-// })
+function checkGuess() {
+    var check = guessInput.value;
+    if (check) {
+        for (let i=0; i < title.length; i++) {
+            if (check == title[i]) {
+                text.innerHTML = "You guessed right!";
+            }    
+        }
+        text.innerHTML = "try again";
+        text.innerHTML = gen_exp;
+    }
+    else {
+        text.innerHTML = "please enter a guess";
+        text.classList.add('alert-danger');
+        text.classList.remove('alert-danger');
+        text.innerHTML = gen_exp;
+    }
+}
+
+function giveHint() {
+    let index_exp = explanation.indexOf(gen_exp);
+    for (let i=0; i <hint.length; i++) {
+        if (i == index_exp) {
+            text.innerHTML = hint[i];        
+        }
+    }
+    text.innerHTML = gen_exp;
+}
+
+generateExplanation();
+
+
 
